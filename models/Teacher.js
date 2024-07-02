@@ -4,8 +4,8 @@ const sequelize = require('../database');
 const Teacher = sequelize.define('Teacher', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
   name: {
     type: DataTypes.STRING(50),

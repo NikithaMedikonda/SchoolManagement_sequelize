@@ -1,14 +1,16 @@
+
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
+const Class = require('./class');
 
 const Student = sequelize.define('Student', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
   name: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(255),
     allowNull: false
   },
   dob: {
@@ -18,10 +20,10 @@ const Student = sequelize.define('Student', {
   address: {
     type: DataTypes.STRING(100)
   },
-  classID: {
+  classId: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'Class',
+      model: Class,
       key: 'classRoom'
     }
   },

@@ -1,16 +1,17 @@
-const { DataTypes, Sequelize } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
+const Student = require('./student');
 
 const Fee = sequelize.define('Fee', {
-  feeID: {
+  feeId: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-  studentID: {
+  studentId: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'Student',
+      model: Student,
       key: 'id'
     }
   },
